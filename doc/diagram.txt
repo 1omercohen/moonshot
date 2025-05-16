@@ -1,0 +1,21 @@
+title User Management Diagram
+
+Frontend->Backend: get all the users
+Backend->DB: query get all users
+DB->Backend: return list of users
+Backend->Frontend: list of users
+
+Frontend->Backend: create user
+Backend->DB: create new user
+DB->Backend: return the new user
+Backend->Frontend: return user
+
+Frontend->Backend: update user
+Backend->DB: find and update the user
+DB->Backend: return updated user
+Backend->Frontend: return user
+
+Frontend->Backend: delete user
+Backend->DB: delete the user
+DB->Backend: return ok
+Backend->Frontend: return ok

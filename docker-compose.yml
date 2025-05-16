@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+    api:
+        build: ./server
+        image: moonshot-user-service:latest
+        environment:
+            - DB_HOST=db
+            - DB_PORT=5432
+            - DB_USER=postgres
+            - DB_PASSWORD=postgres
+            - DB_NAME=moonshot
+            - PORT=4000
+        ports:
+            - "4000:4000"
+        depends_on:
+            - db
+
+    db:
+        image: postgres:14-alpine
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DB=moonshot
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+
+volumes:
+    pgdata:
