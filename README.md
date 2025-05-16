@@ -4,11 +4,9 @@ TASK INFORMATION:
 2. ```shell
    docker-compose up -d --scale backend=2
    ```
-
-````
 3. ```shell
     cd client && yarn install
-````
+```
 
 4. ```shell
    yarn start
